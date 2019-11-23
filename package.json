@@ -1,0 +1,22 @@
+{
+  "name": "profile-generator",
+  "version": "1.0.0",
+  "description": "profile genrator\u001b[D\u001b[D\u001b[D\u001b[D\u001b[De\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshaili/Profile-Generator.git"
+  },
+  "keywords": [
+    "profile"
+  ],
+  "author": "shaili shah",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sshaili/Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/sshaili/Profile-Generator#readme"
+}
