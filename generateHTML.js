@@ -1,3 +1,9 @@
+const fs = require("fs"); // import fs npm library to write file
+const util = require("util"); // import util npm library to write file
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const callApis = require('./callApi'); // import function from callApi.js file
+
 const colors = {
     red: {
         fontShadow: "#42201E",
@@ -44,10 +50,9 @@ const colors = {
 }
 
 
-const generateHTML = (colors, data, color, locationURL) => {
-    // console.log(data);
-    
-    return `<!DOCTYPE html>
+function generateHTML(username,color,res1,res2) {
+ 
+    return writeFileAsync`<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -210,7 +215,4 @@ const generateHTML = (colors, data, color, locationURL) => {
     </html>`
 }
 // generateHTML(colors);
-module.exports = {
-    generateHTML: generateHTML,
-    colors: colors
-};
+module.exports = generateHTML;
