@@ -1,4 +1,3 @@
-const generateHTML = require("./generateHTML.js");
 const callApi = require("./callApi");
 const inquirer = require("inquirer");
 

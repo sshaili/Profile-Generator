@@ -2,7 +2,7 @@ const fs = require("fs"); // import fs npm library to write file
 const util = require("util"); // import util npm library to write file
 const writeFileAsync = util.promisify(fs.writeFile);
 
-const callApis = require('./callApi'); // import function from callApi.js file
+const callApi = require('./callApi'); // import function from callApi.js file
 
 const colors = {
     red: {
@@ -52,7 +52,7 @@ const colors = {
 
 function generateHTML(username,color,res1,res2) {
  
-    return writeFileAsync`<!DOCTYPE html>
+    return writeFileAsync(`${username}.html`,`<!DOCTYPE html>
     <html lang="en">
     
     <head>
@@ -171,40 +171,40 @@ function generateHTML(username,color,res1,res2) {
     <body>
         <div id="header-background"></div>
         <div id="wrapper">
-            <h1><img id="profile-pic" src=${data.avatar_url} alt="profile-pic"></h1>
-            <h1 id="name">Hi! My name is ${data.name}</h1>
-            ${data.company != null ? `<h3>Currently @ ${data.company}</h3>` : ``}
+            <h1><img id="profile-pic" src=${res1.avatar_url} alt="profile-pic"></h1>
+            <h1 id="name">Hi! My name is ${res1.name}</h1>
+            ${res1.company != null ? `<h3>Currently @ ${res1.company}</h3>` : ``}
             <h2>
-            ${data.location != null ? `<a href="https://www.google.com/maps/search/?api=1&query=${locationURL}">
-            <i class="fas fa-map-marked-alt"><span>&nbsp;</span></i>${data.location}</a>
+            ${res1.location != null ? `<a href="https://www.google.com/maps/search/?api=1&query=${locationURL}">
+            <i class="fas fa-map-marked-alt"><span>&nbsp;</span></i>${res1.location}</a>
             <span>&emsp;</span>` : `""`}
-            <a href="${data.html_url}"><i class="fab fa-github"><span>&nbsp;</span></i>GitHub</a>
-            ${data.blog != "" ? `<span>&emsp;</span>
-            <a href="${data.blog}"><i class="fas fa-globe"><span>&nbsp;</span></i>Website</a>` : ``}
+            <a href="${res1.html_url}"><i class="fab fa-github"><span>&nbsp;</span></i>GitHub</a>
+            ${res1.blog != "" ? `<span>&emsp;</span>
+            <a href="${res1.blog}"><i class="fas fa-globe"><span>&nbsp;</span></i>Website</a>` : ``}
             </h2>
         </div>
         <div id="message">
-            <h1>${data.bio != null ? `${data.bio}` : ``}</h1>        
+            <h1>${res1.bio != null ? `${res1.bio}` : ``}</h1>        
         </div>
         <div id="git-buttons">
             <div class="github-buttons">
                 <div class="git-btn" id="repos">
                     <h2 class="buttons">Public Repositories</h2>
-                    <h2 class="buttons">${data.public_repos}</h2>
+                    <h2 class="buttons">${res1.public_repos}</h2>
                 </div>
                 <div class="git-btn" id="stars">
                     <h2 class="buttons">Github Stars</h2>
-                    <h2 class="buttons">${data.public_gists}</h2>
+                    <h2 class="buttons">${res1.public_gists}</h2>
                 </div>
             </div>
             <div class="github-buttons">
                 <div class="git-btn" id="followers">
                     <h2 class="buttons">Followers</h2>
-                    <h2 class="buttons">${data.followers}</h2>
+                    <h2 class="buttons">${res1.followers}</h2>
                 </div>
                 <div class="git-btn" id="following">
                     <h2 class="buttons">Following</h2>
-                    <h2 class="buttons">${data.following}</h2>
+                    <h2 class="buttons">${res1.following}</h2>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@ function generateHTML(username,color,res1,res2) {
     
     </body>
     
-    </html>`
+    </html>`)
 }
 // generateHTML(colors);
 module.exports = generateHTML;
