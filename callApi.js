@@ -26,7 +26,7 @@ async function callApi(username,color){
 
     const contentHtml = await fs.readFileSync(path.resolve(__dirname,`${username}.html`)).toString('utf-8');
     await page.setContent(contentHtml);
-    await page.waitForSelector('main');
+    // await page.waitForSelector('main');
 
     await page.pdf(options);
     await page.screenshot({ path: 'screenshot.png', fullPage: true });
