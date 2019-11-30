@@ -9,40 +9,47 @@ const colors = {
         fontShadow: "#42201E",
         headerBackground: "#829BB0",
         wrapperBackground: "#C2271F",
+        headerColor: "#F2EBDF",
         borderColor: "#C1CC35"
     },
     blue: {
         fontShadow: "#242B42",
+        headerColor: "#F2EBDF",
         headerBackground: "#F4F1B8",
         wrapperBackground: "#2F51C2",
         borderColor: "#CC6245"
     },
     yellow: {
         fontShadow: "#6B6741",
+        headerColor: "#F2EBDF",
         headerBackground: "#D8F5FA",
         wrapperBackground: "#EBDA49",
         borderColor: "#B82765"
     },
     green: {
         fontShadow: "#384735",
+        headerColor: "#F2EBDF",
         headerBackground: "#F4F1B8",
         wrapperBackground: "#6AC757",
         borderColor: "#7570D0"
     },
     orange: {
         fontShadow: "#805F3C",
+        headerColor: "#F2EBDF",
         headerBackground: "#D8F3B4",
         wrapperBackground: "#FF972B",
         borderColor: "#45E161"
     },
     violet: {
         fontShadow: "#3A2A52",
+        headerColor: "#F2EBDF",
         headerBackground: "#EDCDC5",
         wrapperBackground: "#8637FF",
         borderColor: "#FFB252"
     },
     grey: {
         fontShadow: "#595959",
+        headerColor: "#F2EBDF",
         headerBackground: "#D1CFC7",
         wrapperBackground: "#BFBFBF",
         borderColor: "#6E6C69"
@@ -173,11 +180,8 @@ function generateHTML(username,color,res1,res2) {
         <div id="wrapper">
             <h1><img id="profile-pic" src=${res1.data.avatar_url} alt="profile-pic"></h1>
             <h1 id="name">Hi! My name is ${res1.data.name}</h1>
-            ${res1.data.company != null ? `<h3>Currently @ ${res1.data.company}</h3>` : ``}
+            ${res1.data.company != null ? `<h3>I am currently working @ ${res1.data.company}</h3>` : ``}
             <h2>
-            ${res1.location != null ? `<a href="https://www.google.com/maps/search/?api=1&query=${locationURL}">
-            <i class="fas fa-map-marked-alt"><span>&nbsp;</span></i>${res1.location}</a>
-            <span>&emsp;</span>` : `""`}
             <a href="${res1.data.html_url}"><i class="fab fa-github"><span>&nbsp;</span></i>GitHub</a>
             ${res1.data.blog != "" ? `<span>&emsp;</span>
             <a href="${res1.data.blog}"><i class="fas fa-globe"><span>&nbsp;</span></i>Website</a>` : ``}

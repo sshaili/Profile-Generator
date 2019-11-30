@@ -21,15 +21,13 @@ async function callApi(username,color){
         const browser = await puppeteer.launch();
         const page = await browser.newPage();
         const options = {
-            path: `${username}_PDF.pdf`,
+            path: `${username}.pdf`,
         }
 
     const contentHtml = await fs.readFileSync(path.resolve(__dirname,`${username}.html`)).toString('utf-8');
     await page.setContent(contentHtml);
-    // await page.waitForSelector('main');
-
     await page.pdf(options);
-    await page.screenshot({ path: 'screenshot.png', fullPage: true });
+    await page.screenshot({ path: `${username}.png`, fullPage: true });
 
     await page.close();
     await browser.close();

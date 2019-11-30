@@ -10,7 +10,7 @@ function askQuestion() {
             },
             {
                 type: "list",
-                message: "Choose a color:",
+                message: "Choose your profile color:",
                 name: "color",
                 choices: [
                     "red",
