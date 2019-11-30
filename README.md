@@ -41,7 +41,7 @@ No 2. Run `node index.js`
 
 # Preview
 
-[![Watch preview](Examples/Gif.mp4)]
+![Watch preview](Gif.mp4)
 
 # PDF Output
 
@@ -50,5 +50,7 @@ No 2. Run `node index.js`
 # HTML View
 
 ![image](https://user-images.githubusercontent.com/55032521/69895189-5f1b4200-12f9-11ea-8a4a-1fd4685e3b44.png)
+
+# PNG view
 
 ![image](https://user-images.githubusercontent.com/55032521/69895206-a275b080-12f9-11ea-8788-e9f98a8bf960.png)
