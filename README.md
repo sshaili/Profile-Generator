@@ -39,6 +39,10 @@ No 1. Run `npm install`.
 
 No 2. Run `node index.js`
 
+# Preview
+
+[![Watch preview](Examples/Gif.mp4)]
+
 # PDF Output
 
 ![image](https://user-images.githubusercontent.com/55032521/69895175-2a0eef80-12f9-11ea-8a3b-63f6b7320b43.png)
